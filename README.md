@@ -5,7 +5,7 @@
 The eBay crawler faces two key challenges related to item conditions and currency:
 
  - Condition Mismatch:
-    -   When the --set-cond flag (accepting "New" or "Used") is not provided, the script scrapes all search results without filtering by condition. This results in non-standard conditions like "Good - Refurbished," "Pre-Owned," or "Parts Only" appearing in the output.
+    -   When the --set-cond flag (accepting "New" or "Used") is not provided, the script scrapes all search results without filtering by condition. This results in non-standard conditions like "Good - Refurbished", "Pre-Owned", or "Parts Only" appearing in the output.
     -   Individual product pages consistently list conditions as "New" or "Used," creating a mismatch with search result data.
     -   Decision required: Should the crawler include non-standard conditions like "Good - Refurbished," "Pre-Owned," or "Parts Only"  or use the standardized filter conditions (New/Used)?
         
