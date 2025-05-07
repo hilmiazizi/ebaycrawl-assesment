@@ -1,4 +1,4 @@
-
+---
 
 1. Problem
 
@@ -15,8 +15,7 @@ The eBay crawler faces two key challenges related to item conditions and currenc
         
 - Currency Standardization:
     -   Prices must be consistently reported in USD, regardless of the listing’s original currency.
-        
----
+
 
 2. Options Considered
 
