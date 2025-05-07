@@ -1,13 +1,13 @@
 ---
 
-1. Problem
+### 1. Problem
 
 The eBay crawler faces two key challenges related to item conditions and currency:
 
  - Condition Mismatch:
     -   When the --set-cond flag (accepting "New" or "Used") is not provided, the script scrapes all search results without filtering by condition. This results in non-standard conditions like "Good - Refurbished", "Pre-Owned", or "Parts Only" appearing in the output.
     -   Individual product pages consistently list conditions as "New" or "Used," creating a mismatch with search result data.
-    -   Decision required: Should the crawler include non-standard conditions like "Good - Refurbished," "Pre-Owned," or "Parts Only"  or use the standardized filter conditions (New/Used)?
+    -   Decision required: Should the crawler include non-standard conditions like "Good - Refurbished", "Pre-Owned", or "Parts Only"  or use the standardized filter conditions (New/Used)?
         
 - Condition Extraction:
     -   To obtain standardized "New" or "Used" conditions, the crawler could scrape each product page, but this significantly slows execution and increases requests.
@@ -17,7 +17,7 @@ The eBay crawler faces two key challenges related to item conditions and currenc
     -   Prices must be consistently reported in USD, regardless of the listing’s original currency.
 
 
-2. Options Considered
+### 2. Options Considered
 
 To address the mismatch and ensure standardized condition data, two approaches were evaluated:
 
@@ -37,7 +37,7 @@ To address the mismatch and ensure standardized condition data, two approaches w
     -   Ensures standardized output by aligning with eBay's filter categories.
             
 
-3. Chosen Approach
+### 3. Chosen Approach
 
 Option 2: Rely on Filter Conditions was selected for the following reasons:
 -   Performance: Avoiding product page requests reduces runtime and server load, making the crawler more efficient and scalable.
@@ -53,7 +53,7 @@ To handle the absence of `--set-cond`, the script will:
 3.  For each condition, apply the filter, scrape the results, and store the data with the corresponding condition label.
     
 
-4. Implementation Details
+### 4. Implementation Details
 -   Condition Handling:
     -   The _get_condition method parses the search page to extract available condition filters (e.g., "New," "Used").
     -   When `--set-cond` is set, the script applies the specified condition directly.
